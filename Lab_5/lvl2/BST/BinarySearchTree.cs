@@ -45,7 +45,6 @@ namespace lvl2.BST
             return SearchRecursive(root.Right, name);
         }
 
-        // Ротація-вправо (Right Rotate)
         public void RotateRight()
         {
             if (Root?.Left != null) Root = RotateRight(Root);

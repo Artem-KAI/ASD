@@ -21,6 +21,7 @@ namespace lvl1.Services
                     return -1;
                 }
                  
+                // формула 
                 int pos = low + (int)((double)(high - low) /
                           (array[high].RecordBookNumber - array[low].RecordBookNumber) *
                           (key - array[low].RecordBookNumber));

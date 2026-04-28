@@ -7,7 +7,6 @@ namespace lvl3.Services
     {
         public Node Root { get; private set; }
 
-        // Метод Splay: піднімає вузол із заданим ім'ям у корінь
         private Node Splay(Node root, string name)
         {
             if (root == null || root.Data.FirstName == name)
@@ -15,20 +14,17 @@ namespace lvl3.Services
 
             int comparison = string.Compare(name, root.Data.FirstName);
 
-            // Ключ у лівому піддереві
             if (comparison < 0)
             {
                 if (root.Left == null) return root;
 
                 int leftComp = string.Compare(name, root.Left.Data.FirstName);
 
-                // Zig-Zig (Ліво-Ліво)
                 if (leftComp < 0)
                 {
                     root.Left.Left = Splay(root.Left.Left, name);
                     root = RotateRight(root);
                 }
-                // Zig-Zag (Ліво-Право)
                 else if (leftComp > 0)
                 {
                     root.Left.Right = Splay(root.Left.Right, name);
@@ -38,21 +34,18 @@ namespace lvl3.Services
 
                 return (root.Left == null) ? root : RotateRight(root);
             }
-            // Ключ у правому піддереві
             else
             {
                 if (root.Right == null) return root;
 
                 int rightComp = string.Compare(name, root.Right.Data.FirstName);
 
-                // Zag-Zig (Право-Ліво)
                 if (rightComp < 0)
                 {
                     root.Right.Left = Splay(root.Right.Left, name);
                     if (root.Right.Left != null)
                         root.Right = RotateRight(root.Right);
                 }
-                // Zag-Zag (Право-Право)
                 else if (rightComp > 0)
                 {
                     root.Right.Right = Splay(root.Right.Right, name);
@@ -63,7 +56,6 @@ namespace lvl3.Services
             }
         }
 
-        // Вставка з балансуванням
         public void Insert(Student student)
         {
             if (Root == null)
@@ -72,12 +64,12 @@ namespace lvl3.Services
                 return;
             }
 
-            // Піднімаємо найближчий за значенням вузол до кореня
             Root = Splay(Root, student.FirstName);
 
             int comp = string.Compare(student.FirstName, Root.Data.FirstName);
 
-            if (comp == 0) return; // Вузол вже існує
+            if (comp == 0)
+                return; 
 
             Node newNode = new Node(student);
             if (comp < 0)
@@ -95,7 +87,6 @@ namespace lvl3.Services
             Root = newNode;
         }
 
-        // Пошук із підняттям знайденого вузла в корінь
         public Node Search(string name)
         {
             Root = Splay(Root, name);
@@ -104,7 +95,6 @@ namespace lvl3.Services
             return null;
         }
 
-        // Допоміжні методи ротації
         private Node RotateRight(Node y)
         {
             Node x = y.Left;
