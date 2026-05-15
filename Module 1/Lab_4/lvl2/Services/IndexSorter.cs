@@ -9,7 +9,9 @@ namespace lvl2.Services
             int n = students.Length;
 
             int[] indices = new int[n];
-            for (int i = 0; i < n; i++) indices[i] = i;
+
+            for (int i = 0; i < n; i++) 
+                indices[i] = i;
 
             for (int i = 0; i < n - 1; i++)
             {

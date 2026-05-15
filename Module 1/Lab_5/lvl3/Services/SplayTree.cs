@@ -16,7 +16,8 @@ namespace lvl3.Services
 
             if (comparison < 0)
             {
-                if (root.Left == null) return root;
+                if (root.Left == null)
+                    return root;
 
                 int leftComp = string.Compare(name, root.Left.Data.FirstName);
 

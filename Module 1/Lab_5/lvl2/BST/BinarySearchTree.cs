@@ -6,7 +6,6 @@ namespace lvl2.BST
     {
         public Node Root { get; private set; }
 
-        // Додавання вузла (Ключ - Ім'я)
         public void Insert(Student student)
         {
             Root = InsertRecursive(Root, student);
@@ -47,7 +46,8 @@ namespace lvl2.BST
 
         public void RotateRight()
         {
-            if (Root?.Left != null) Root = RotateRight(Root);
+            if (Root?.Left != null)
+                Root = RotateRight(Root);
         }
 
         private Node RotateRight(Node y)
@@ -63,7 +63,8 @@ namespace lvl2.BST
          
         public void RotateLeft()
         {
-            if (Root?.Right != null) Root = RotateLeft(Root);
+            if (Root?.Right != null) 
+                Root = RotateLeft(Root);
         }
 
         private Node RotateLeft(Node x)
