@@ -16,18 +16,15 @@ namespace lvl2
 
             foreach (int size in testSizes)
             {
-                // Генеруємо один масив і копіюємо його, щоб умови були ідентичними
                 int[] sourceData = DataGenerator.CreateRandomArray(size);
                 int[] dataForBU = (int[])sourceData.Clone();
                 int[] dataForTD = (int[])sourceData.Clone();
 
-                // Тест Bottom-Up
                 Stopwatch sw = Stopwatch.StartNew();
                 Sorter.BottomUpMergeSort(dataForBU);
                 sw.Stop();
                 double timeBU = sw.Elapsed.TotalMilliseconds;
 
-                // Тест Top-Down
                 sw.Restart();
                 Sorter.TopDownMergeSort(dataForTD);
                 sw.Stop();
@@ -36,9 +33,7 @@ namespace lvl2
                 Console.WriteLine("{0,10} | {1,15:F4} | {2,15:F4}", size, timeBU, timeTD);
             }
 
-            Console.WriteLine("------------------------------------------------------------");
-            Console.WriteLine("Готово! Використовуйте ці дані для одного графіка в Excel.");
-            Console.ReadKey();
+            
         }
     }
 }

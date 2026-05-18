@@ -4,7 +4,7 @@ namespace lvl2
 {
     public static class Sorter
     {
-        // --- VISKHIDNE (BOTTOM-UP) ---
+        // визхідне злиття
         public static void BottomUpMergeSort(int[] array)
         {
             int n = array.Length;
@@ -21,7 +21,7 @@ namespace lvl2
             }
         }
 
-        // --- NYZKHIDNE (TOP-DOWN) ---
+        // низхідне злиття
         public static void TopDownMergeSort(int[] array)
         {
             int[] temp = new int[array.Length];

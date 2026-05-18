@@ -6,7 +6,6 @@ namespace lvl3
     {
         private static readonly Random _random = new Random();
 
-        // Середній випадок: Випадкові дані
         public static int[] CreateRandomArray(int size)
         {
             int[] array = new int[size];
@@ -16,16 +15,14 @@ namespace lvl3
             }
             return array;
         }
-
-        // Найкращий випадок: Вже відсортовані дані (за зростанням)
+         
         public static int[] CreateSortedArray(int size)
         {
             int[] array = CreateRandomArray(size);
-            Array.Sort(array); // Сортуємо вбудованим швидким методом
+            Array.Sort(array); 
             return array;
         }
-
-        // Найгірший випадок: Відсортовані за спаданням (зворотний порядок)
+         
         public static int[] CreateReverseSortedArray(int size)
         {
             int[] array = CreateSortedArray(size);
