@@ -2,7 +2,7 @@
 
 public class NumericalIntegration
 {
-    // Підінтегральна функція для варіанту 5: f(x) = sin(sqrt(1 + x^2) + x)
+    // Підінтегральна функція  
     private double F(double x)
     {
         return Math.Sin(Math.Sqrt(1 + x * x) + x);
@@ -13,7 +13,7 @@ public class NumericalIntegration
     {
         double sum = 0.0;
         double x = a;
-        int n = (int)Math.Round((b - a) / step); // Використовуємо Math.Round для уникнення похибок
+        int n = (int)Math.Round((b - a) / step); // уникнення похибок
         for (int i = 0; i < n; i++)
         {
             sum += F(x + i * step);

@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 
 public class DifferentialSolver
-{
-    // Наша функція f(x, y) = 1 / (2x - y^2)
+{ 
     private double F(double x, double y)
     {
         double denominator = 2 * x - y * y;
-
-        // Захист від ділення на нуль (або дуже близьке до нуля число)
+         
         if (Math.Abs(denominator) < 1e-10)
         {
             throw new DivideByZeroException($"Ділення на нуль виявлено при x={x:F4}, y={y:F4}");
@@ -29,7 +27,7 @@ public class DifferentialSolver
         // Додаємо початкову точку
         points.Add((x, y));
 
-        // Цикл обчислення. Використовуємо xEnd - h/2 для уникнення похибок float
+        //  xEnd - h/2 для уникнення похибок float
         while (x < xEnd - h / 2.0)
         {
             // Формули Рунге-Кутти 2-го порядку

@@ -3,8 +3,7 @@
 namespace lvl2
 {
     public static class Sorter
-    {
-        // визхідне злиття
+    { 
         public static void BottomUpMergeSort(int[] array)
         {
             int n = array.Length;
@@ -19,9 +18,7 @@ namespace lvl2
                     Merge(array, left, mid, right, temp);
                 }
             }
-        }
-
-        // низхідне злиття
+        } 
         public static void TopDownMergeSort(int[] array)
         {
             int[] temp = new int[array.Length];
@@ -34,12 +31,11 @@ namespace lvl2
 
             int mid = (last + first) / 2;
 
-            TopDownSplitMerge(array, first, mid, temp);    // Сортуємо ліву частину
-            TopDownSplitMerge(array, mid, last, temp);     // Сортуємо праву частину
-            Merge(array, first, mid, last, temp);          // Зливаємо
+            TopDownSplitMerge(array, first, mid, temp);     
+            TopDownSplitMerge(array, mid, last, temp);      
+            Merge(array, first, mid, last, temp);        
         }
-
-        // Спільний метод злиття для обох алгоритмів
+         
         private static void Merge(int[] array, int left, int mid, int right, int[] temp)
         {
             int i = left;

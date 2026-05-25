@@ -1,12 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace lvl1
 {
-    internal class Combinatorics
-    {
+    public static class Combinatorics
+    { 
+        public static long Factorial(int n)
+        {
+            if (n < 0)
+                throw new ArgumentException("Факторіал від'ємного числа не існує.");
+
+            if (n == 0 || n == 1)
+                return 1;
+
+            long result = 1;
+            for (int i = 2; i <= n; i++)
+            {
+                result *= i;
+            }
+
+            return result;
+        }
     }
 }

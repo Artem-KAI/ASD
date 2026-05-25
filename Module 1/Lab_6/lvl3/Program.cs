@@ -17,20 +17,17 @@ namespace lvl3
             Console.WriteLine(new string('-', 85));
             Console.WriteLine("{0,-20} | {1,-25} | {2,-25}", "Структура даних", "Bottom-Up Час (нс)", "Top-Down Час (нс)");
             Console.WriteLine(new string('-', 85));
-
-            // Найкращий випадок (Відсортовані)
+             
             int[] sortedData = DataGenerator.CreateSortedArray(SIZE);
             double bestBU = MeasureAverageTimeNano(sortedData, true, RUNS);
             double bestTD = MeasureAverageTimeNano(sortedData, false, RUNS);
             Console.WriteLine("{0,-20} | {1,-25:F0} | {2,-25:F0}", "Відсортовані (Best)", bestBU, bestTD);
-
-            // Середній випадок (Випадкові)
+             
             int[] randomData = DataGenerator.CreateRandomArray(SIZE);
             double avgBU = MeasureAverageTimeNano(randomData, true, RUNS);
             double avgTD = MeasureAverageTimeNano(randomData, false, RUNS);
             Console.WriteLine("{0,-20} | {1,-25:F0} | {2,-25:F0}", "Випадкові (Average)", avgBU, avgTD);
-
-            // Найгірший випадок (Відсортовані за спаданням)
+             
             int[] reverseData = DataGenerator.CreateReverseSortedArray(SIZE);
             double worstBU = MeasureAverageTimeNano(reverseData, true, RUNS);
             double worstTD = MeasureAverageTimeNano(reverseData, false, RUNS);
