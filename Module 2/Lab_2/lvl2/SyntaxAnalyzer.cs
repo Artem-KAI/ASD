@@ -3,15 +3,14 @@
 namespace lvl2
 {
     public class SyntaxAnalyzer
-    {
-        // Перелік станів скінченного автомата прихований всередині класу
+    { 
         private enum State
         {
-            S0_Start,          // Початковий стан (очікує '+')
-            S1_Plus,           // Отримано '+', очікує цифру
-            S2_Digits_Final,   // Отримано цифри (фінальний стан)
-            S3_Letters_Final,  // Отримано літери A-Z (фінальний стан)
-            Error              // Стан помилки
+            S0_Start,          
+            S1_Plus,           
+            S2_Digits_Final,   
+            S3_Letters_Final,  
+            Error              
         }
  
         public bool Analyze(string input)
@@ -56,11 +55,10 @@ namespace lvl2
                         break;
 
                     case State.Error:
-                        return false; // Достроковий вихід при помилці
+                        return false;  
                 }
             }
-
-            // Рядок вважається валідним лише якщо автомат зупинився в одному з фінальних станів
+             
             return currentState == State.S2_Digits_Final || currentState == State.S3_Letters_Final;
         }
     }
