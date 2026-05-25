@@ -7,13 +7,11 @@ namespace lvl1
     class Program
     {
         static void Main(string[] args)
-        {
-            // Підтримка української мови в консолі
+        { 
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
             string filePath = "words_variant5.txt";
-
-            // 1. Тестові дані (правильні та неправильні слова для Варіанту 5)
+             
             var initialWords = new List<string>
             {
                 "+123",         // Правильно: +, цифри
@@ -27,11 +25,10 @@ namespace lvl1
             };
 
             try
-            {
-                // Створення текстового файлу (Завдання 1)
+            {  
                 FileHandler.CreateFileWithWords(filePath, initialWords);
 
-                // 2. Регулярний вираз для Варіанту 5 (Завдання 2)
+                // Регулярний  
                 // ^       - початок слова
                 // \+      - символ '+'
                 // \d+     - одна або більше цифр (0-9)
@@ -40,12 +37,10 @@ namespace lvl1
                 string pattern = @"^\+\d+[A-Z]*$";
 
                 var matcher = new RegexMatcher(pattern);
-
-                // 3. Пошук слів у файлі (Завдання 3)
+                 
                 var wordsFromFile = FileHandler.ReadWordsFromFile(filePath);
                 var matchedWords = matcher.FindMatchingWords(wordsFromFile).ToList();
-
-                // Виведення результатів
+                 
                 Console.WriteLine("\n--- РЕЗУЛЬТАТИ ПОШУКУ (Рівень 1, Варіант 5) ---");
                 Console.WriteLine($"Регулярний вираз: {pattern}");
                 Console.WriteLine($"Знайдено відповідних слів: {matchedWords.Count}\n");

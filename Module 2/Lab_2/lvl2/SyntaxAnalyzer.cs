@@ -13,10 +13,7 @@ namespace lvl2
             S3_Letters_Final,  // Отримано літери A-Z (фінальний стан)
             Error              // Стан помилки
         }
-
-        /// <summary>
-        /// Реалізація скінченного автомата за допомогою оператора switch
-        /// </summary>
+ 
         public bool Analyze(string input)
         {
             if (string.IsNullOrEmpty(input))
