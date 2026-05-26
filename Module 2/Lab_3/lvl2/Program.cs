@@ -8,11 +8,6 @@ namespace lvl2
         { 
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-            Console.WriteLine("--- Лабораторна робота 2.3. Завдання 2 (Варіант 5) ---");
-            Console.WriteLine("Дано: Парні цифри вісімкової системи {0, 2, 4, 6}.");
-            Console.WriteLine("Обчислити: Кількість тризначних чисел (цифри повторюються).");
-            Console.WriteLine("Тип вибірки: Розміщення з повтореннями.\n");
-
             try
             { 
                 int totalAvailableDigits = 4;  

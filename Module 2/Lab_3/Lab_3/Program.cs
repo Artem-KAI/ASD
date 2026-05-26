@@ -7,11 +7,7 @@ namespace lvl1
         static void Main(string[] args)
         { 
             Console.OutputEncoding = System.Text.Encoding.UTF8;
-
-            Console.WriteLine("--- Лабораторна робота 2.3. Завдання 1  ---");
-            Console.WriteLine("Дано: 10 доповідей на конференції.");
-            Console.WriteLine("Умова: Дві доповіді мають бути обов'язково поруч.");
-            Console.WriteLine("Тип: Перестановка без повторень (метод склеювання).\n");
+             
 
             try
             {
